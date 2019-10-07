@@ -25,24 +25,24 @@
 				<interceptor-ref name="defaultStack" />
 			</interceptor-stack>
 		</interceptors>
-		
+
 		<default-interceptor-ref name="loggingStack"></default-interceptor-ref>
-		
+
 		<action name="login" class="net.viralpatel.struts2.LoginAction">
 			<result name="success" type="tiles">/welcome.tiles</result>
 			<result name="error">Login.jsp</result>
 		</action>
-		
+
 		<action name="customer"
 			class="net.viralpatel.struts2.CustomerAction">
 			<result name="success" type="tiles">/customer.success.tiles</result>
 			<result name="input" type="tiles">/customer.tiles</result>
 		</action>
-		
+
 		<action name="customer-form">
 			<result name="success" type="tiles">/customer.tiles</result>
 		</action>
-		
+
 		<action name="userImage"
 			class="net.viralpatel.struts2.FileUploadAction">
 			<interceptor-ref name="fileUpload">
@@ -55,6 +55,11 @@
 			<result name="success">SuccessUserImage.jsp</result>
 			<result name="input">UserImage.jsp</result>
 		</action>
-		
+		<action name="ajaxdemo"
+			class="net.viralpatel.struts2.AjaxAutocomplete">
+			<interceptor-ref name="loggingStack"></interceptor-ref>
+			<result name="success" type="tiles">/ajaxdemo.tiles</result>
+			<result type="tiles">/ajaxdemo.tiles</result>
+		</action>
 	</package>
 </struts> 
