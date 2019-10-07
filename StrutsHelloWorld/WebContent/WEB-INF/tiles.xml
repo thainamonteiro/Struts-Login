@@ -23,4 +23,16 @@
         <put-attribute name="title" value="Customer Added" /> 
         <put-attribute name="body" value="/SuccessCustomer.jsp" /> 
     </definition> 
+     <definition name="/ajaxdemo.tiles" extends="baseLayout"> 
+        <put-attribute name="title" value="Ajax" /> 
+        <put-attribute name="body" value="/AjaxDemo.jsp" /> 
+    </definition> 
+     <definition name="/userimage.tiles" extends="baseLayout"> 
+        <put-attribute name="title" value="Upload" /> 
+        <put-attribute name="body" value="/UserImage.jsp" /> 
+    </definition> 
+    <definition name="/userimage.success.tiles" extends="baseLayout"> 
+        <put-attribute name="title" value="Upload Success" /> 
+        <put-attribute name="body" value="/SuccessUserImage.jsp" /> 
+    </definition> 
 </tiles-definitions>

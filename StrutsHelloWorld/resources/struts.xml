@@ -52,14 +52,21 @@
 				</param>
 			</interceptor-ref>
 			<interceptor-ref name="defaultStack"></interceptor-ref>
-			<result name="success">SuccessUserImage.jsp</result>
-			<result name="input">UserImage.jsp</result>
+			<result name="success" type="tiles">/userimage.success.tiles</result>
+			<result name="input" type="tiles">/userimage.tiles</result>
 		</action>
+		
+		<action name="upload">
+			<result name="success" type="tiles">/userimage.tiles</result>
+		</action>
+		
 		<action name="ajaxdemo"
 			class="net.viralpatel.struts2.AjaxAutocomplete">
 			<interceptor-ref name="loggingStack"></interceptor-ref>
 			<result name="success" type="tiles">/ajaxdemo.tiles</result>
 			<result type="tiles">/ajaxdemo.tiles</result>
 		</action>
+		
+		
 	</package>
 </struts> 
