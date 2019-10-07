@@ -1,32 +1,60 @@
-<?xml version="1.0" encoding="UTF-8" ?> 
+<?xml version="1.0" encoding="UTF-8" ?>
+ 
 <!DOCTYPE struts PUBLIC 
     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
-    "http://struts.apache.org/dtds/struts-2.0.dtd"> 
-  
-<struts> 
-    <constant name="struts.enable.DynamicMethodInvocation" 
-        value="false" /> 
-    <constant name="struts.devMode" value="false" /> 
-    <constant name="struts.custom.i18n.resources" 
-        value="ApplicationResources" /> 
-  
-    <package name="default" extends="struts-default" namespace="/"> 
-        <result-types> 
-            <result-type name="tiles" 
-                class="org.apache.struts2.views.tiles.TilesResult" /> 
-        </result-types> 
-        <action name="login" 
-            class="net.viralpatel.struts2.LoginAction"> 
-            <result name="success" type="tiles">/welcome.tiles</result> 
-            <result name="error">Login.jsp</result> 
-        </action> 
-        <action name="customer" 
-            class="net.viralpatel.struts2.CustomerAction"> 
-            <result name="success" type="tiles">/customer.success.tiles</result>
-            <result name="input" type="tiles">/customer.tiles</result> 
-        </action> 
-        <action name="customer-form"> 
-            <result name="success" type="tiles">/customer.tiles</result> 
-        </action> 
-    </package> 
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation"
+		value="false" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.custom.i18n.resources"
+		value="ApplicationResources" />
+
+	<package name="default" extends="struts-default" namespace="/">
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+
+		<interceptors>
+			<interceptor name="mylogging"
+				class="net.viralpatel.struts2.interceptor.MyLoggingInterceptor">
+			</interceptor>
+			<interceptor-stack name="loggingStack">
+				<interceptor-ref name="mylogging" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+		
+		<default-interceptor-ref name="loggingStack"></default-interceptor-ref>
+		
+		<action name="login" class="net.viralpatel.struts2.LoginAction">
+			<result name="success" type="tiles">/welcome.tiles</result>
+			<result name="error">Login.jsp</result>
+		</action>
+		
+		<action name="customer"
+			class="net.viralpatel.struts2.CustomerAction">
+			<result name="success" type="tiles">/customer.success.tiles</result>
+			<result name="input" type="tiles">/customer.tiles</result>
+		</action>
+		
+		<action name="customer-form">
+			<result name="success" type="tiles">/customer.tiles</result>
+		</action>
+		
+		<action name="userImage"
+			class="net.viralpatel.struts2.FileUploadAction">
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">2097152</param>
+				<param name="allowedTypes">
+					image/png,image/gif,image/jpeg,image/pjpeg
+				</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">SuccessUserImage.jsp</result>
+			<result name="input">UserImage.jsp</result>
+		</action>
+		
+	</package>
 </struts> 
