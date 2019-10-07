@@ -6,6 +6,7 @@
 </head> 
   
 <body> 
+	<s:a href="Customer.jsp">Add Customer</s:a>
     <h2>Howdy, <s:property value="username" />...!</h2>
 </body> 
 </html>

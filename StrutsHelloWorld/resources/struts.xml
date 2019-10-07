@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <!DOCTYPE struts PUBLIC 
     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
-    "http://struts.apache.org/dtds/struts-2.0.dtd"> 
-  
-<struts> 
-    <constant name="struts.enable.DynamicMethodInvocation" 
-        value="false" /> 
-    <constant name="struts.devMode" value="false" /> 
-    <constant name="ApplicationResources" 
-        value="ApplicationResources" /> 
-  
-    <package name="default" extends="struts-default" namespace="/"> 
-        <action name="login" 
-            class="net.viralpatel.struts2.LoginAction"> 
-            <result name="success">Welcome.jsp</result> 
-            <result name="error">Login.jsp</result> 
-        </action> 
-    </package> 
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation"
+		value="false" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.custom.i18n.resources"
+		value="ApplicationResources" />
+
+	<package name="default" extends="struts-default" namespace="/">
+		<action name="login" class="net.viralpatel.struts2.LoginAction">
+			<result name="success">Welcome.jsp</result>
+			<result name="error">Login.jsp</result>
+		</action>
+		<action name="customer"
+			class="net.viralpatel.struts2.CustomerAction">
+			<result name="success">SuccessCustomer.jsp</result>
+			<result name="input">Customer.jsp</result>
+		</action>
+	</package>
 </struts> 
