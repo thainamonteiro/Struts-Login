@@ -7,10 +7,10 @@
     <sx:head /> 
 </head> 
 <body> 
-    <h2>Struts 2 Autocomplete (Drop down) Example!</h2> 
+    <center><h2>Autocomplete (Drop down)</h2> 
       
-    Country: 
-    <sx:autocompleter size="1" list="countries" name="country"></sx:autocompleter>
+  	Paises: 
+    <sx:autocompleter size="1" list="countries" name="country"></sx:autocompleter></center>
     </action> 
 </body> 
 </html> 

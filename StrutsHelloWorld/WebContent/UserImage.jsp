@@ -2,11 +2,11 @@
 <%@ taglib prefix="s" uri="/struts-tags"%> 
 <html> 
 <head> 
-<title>Upload User Image</title> 
+<title>Upload</title> 
 </head> 
   
 <body> 
-<h2>Struts2 File Upload & Save Example</h2> 
+<center><h2>Upload de Arquivos</h2> </center>
 <s:actionerror /> 
 <s:form action="userImage" method="post" enctype="multipart/form-data">
     <s:file name="userImage" label="User Image" /> 
