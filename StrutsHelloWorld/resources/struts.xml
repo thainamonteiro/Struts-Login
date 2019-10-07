@@ -7,7 +7,7 @@
     <constant name="struts.enable.DynamicMethodInvocation" 
         value="false" /> 
     <constant name="struts.devMode" value="false" /> 
-    <constant name="struts.custom.i18n.resources" 
+    <constant name="ApplicationResources" 
         value="ApplicationResources" /> 
   
     <package name="default" extends="struts-default" namespace="/"> 

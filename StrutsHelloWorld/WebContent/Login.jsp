@@ -14,4 +14,4 @@
     <s:submit method="execute" key="label.login" align="center" />
 </s:form> 
 </body> 
-</html> Welcome
+</html> 
